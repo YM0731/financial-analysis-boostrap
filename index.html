@@ -14,11 +14,11 @@
                     <div class="col">
                         <h4 class="text-white">企業分析 Web</h4>
                         <nav class="navbar navbar-expand-sm navbar-light">
-                            <div >
+                            <div>
                                 <div class="navbar-nav">
-                                    <a class="nav-item nav-link active" href="#">損益計算書</a>
-                                    <a class="nav-item nav-link" href="#">貸借対照表</a>
-                                    <a class="nav-item nav-link" href="#">分析</a>
+                                    <a class="nav-item nav-link active" href="#" @click.prevent.stop="showPlView">損益計算書</a>
+                                    <a class="nav-item nav-link" href="#" @click.prevent.stop="showBsView">貸借対照表</a>
+                                    <a class="nav-item nav-link" href="#" @click.prevent.stop="showAnalysisView">分析</a>
                                 </div> 
                             </div>
                         </nav>
@@ -119,9 +119,39 @@
                         plToukijyunrieki3:0,
                         plToukijyunrieki4:0,
                         plToukijyunrieki5:0,
+                        isPlView:true,
+                        isBsView:false,
+                        isAnalysis:false,
                     }
                 },
                 methods: {
+                    /**
+                     * 損益計算書入力画面表示
+                     */
+                    showPlView() {
+                        console.log("onClick:showPlView");
+                        this.isPlView = true;
+                        this.isBsView = false;
+                        this.isAnalysis = false;
+                    },
+                    /**
+                     * 貸借対照表入力画面表示
+                     */
+                    showBsView() {
+                        console.log("onClick:showBsView");
+                        this.isPlView = false;
+                        this.isBsView = true;
+                        this.isAnalysis = false;
+                    },
+                    /**
+                     * 分析画面表示
+                     */
+                    showAnalysisView() {
+                        console.log("onClick:showAnalysisView");
+                        this.isPlView = false;
+                        this.isBsView = true;
+                        this.isAnalysis = false;
+                    }
                 }
             }).mount('#app')
         </script>
