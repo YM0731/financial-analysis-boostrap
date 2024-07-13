@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="text-white">企業分析 Web</h4>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
                               <button v-bind:class="plLinkBtnClass" v-on:click="changeView('plView')" data-bs-toggle="tab" data-bs-target="#pl-view-tab-pane" type="button" role="tab" aria-controls="pl-tab-pane" aria-selected="true">損益計算書</button>
                             </li>
@@ -23,12 +23,12 @@
                             <li class="nav-item" role="presentation">
                               <button v-bind:class="analysisLinkBtnClass" id="analysis-tab" v-on:click="changeView('analysisView')" data-bs-toggle="tab" data-bs-target="#analysis-view-tab-pane" type="button" role="tab" aria-controls="analysis-tab-pane" aria-selected="false">分析</button>
                             </li>
-                          </ul>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content">
                 <div v-bind:class="plPaneClass" id="pl-view-tab-pane" role="tabpanel" aria-labelledby="pl-tab" tabindex="0">
                     <div class="container">
                         <p class="text-white bg-primary">損益計算書</p>
@@ -135,12 +135,12 @@
                         plToukijyunrieki3:0,
                         plToukijyunrieki4:0,
                         plToukijyunrieki5:0,
-                        plLinkBtnClass: {'nav-link': true, 'active':true},
-                        bsLinkBtnClass: {'nav-link': true, 'active':false},
-                        analysisLinkBtnClass: {'nav-link': true, 'active':false},
-                        plPaneClass: {'tab-pane': true, 'fade': true, 'show': true, 'active':true},
-                        bsPaneClass: {'tab-pane': true, 'fade': true, 'show': false, 'active':false},
-                        analysisPaneClass: {'tab-pane': true, 'fade': true, 'show': false, 'active':false},
+                        plLinkBtnClass: {'nav-link': true, 'active': true},
+                        bsLinkBtnClass: {'nav-link': true, 'active': false},
+                        analysisLinkBtnClass: {'nav-link': true, 'active': false},
+                        plPaneClass: {'tab-pane': true, 'fade': true, 'show': true, 'active': true},
+                        bsPaneClass: {'tab-pane': true, 'fade': true, 'show': false, 'active': false},
+                        analysisPaneClass: {'tab-pane': true, 'fade': true, 'show': false, 'active': false},
                     }
                 },
                 methods: {
