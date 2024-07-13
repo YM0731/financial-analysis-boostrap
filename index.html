@@ -28,7 +28,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="tab-content">
                 <div v-bind:class="plPaneClass" id="pl-view-tab-pane" role="tabpanel" aria-labelledby="pl-tab" tabindex="0">
                     <div class="container">
@@ -90,6 +89,82 @@
                 <div v-bind:class="bsPaneClass" id="bs-view-tab-pane" role="tabpanel" aria-labelledby="bs-tab" tabindex="0">
                     <div class="container">
                         <p class="text-white bg-primary">貸借対照表</p>
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-white bg-info">資産の部</p>
+                                <p class="text-white bg-success bg-gradient">流動資産の部</p>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-genkin">現金　　　　</span>
+                                    <input type="number" aria-label="bs-genkin1" class="no-spin form-control" placeholder="現金5期" v-model.number="bsGenkin1">
+                                    <input type="number" aria-label="bs-genkin2" class="no-spin form-control" placeholder="現金4期" v-model.number="bsGenkin2">
+                                    <input type="number" aria-label="bs-genkin3" class="no-spin form-control" placeholder="現金3期" v-model.number="bsGenkin3">
+                                    <input type="number" aria-label="bs-genkin4" class="no-spin form-control" placeholder="現金2期" v-model.number="bsGenkin4">
+                                    <input type="number" aria-label="bs-genkin5" class="no-spin form-control" placeholder="現金1期" v-model.number="bsGenkin5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-yokin">預金　　　　</span>
+                                    <input type="number" aria-label="bs-yokin1" class="no-spin form-control" placeholder="預金5期" v-model.number="bsYokin1">
+                                    <input type="number" aria-label="bs-yokin2" class="no-spin form-control" placeholder="預金4期" v-model.number="bsYokin2">
+                                    <input type="number" aria-label="bs-yokin3" class="no-spin form-control" placeholder="預金3期" v-model.number="bsYokin3">
+                                    <input type="number" aria-label="bs-yokin4" class="no-spin form-control" placeholder="預金2期" v-model.number="bsYokin4">
+                                    <input type="number" aria-label="bs-yokin5" class="no-spin form-control" placeholder="預金1期" v-model.number="bsYokin5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-uketori-tegata">受取手形　　</span>
+                                    <input type="number" aria-label="bs-uketori-tegata1" class="no-spin form-control" placeholder="受取手形5期" v-model.number="bsUketoriTegata1">
+                                    <input type="number" aria-label="bs-uketori-tegata2" class="no-spin form-control" placeholder="受取手形4期" v-model.number="bsUketoriTegata2">
+                                    <input type="number" aria-label="bs-uketori-tegata3" class="no-spin form-control" placeholder="受取手形3期" v-model.number="bsUketoriTegata3">
+                                    <input type="number" aria-label="bs-uketori-tegata4" class="no-spin form-control" placeholder="受取手形2期" v-model.number="bsUketoriTegata4">
+                                    <input type="number" aria-label="bs-uketori-tegata5" class="no-spin form-control" placeholder="受取手形1期" v-model.number="bsUketoriTegata5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-urikakekin">売掛金　　　</span>
+                                    <input type="number" aria-label="bs-urikakekin1" class="no-spin form-control" placeholder="売掛金5期" v-model.number="bsUrikakekin1">
+                                    <input type="number" aria-label="bs-urikakekin2" class="no-spin form-control" placeholder="売掛金4期" v-model.number="bsUrikakekin2">
+                                    <input type="number" aria-label="bs-urikakekin3" class="no-spin form-control" placeholder="売掛金3期" v-model.number="bsUrikakekin3">
+                                    <input type="number" aria-label="bs-urikakekin4" class="no-spin form-control" placeholder="売掛金2期" v-model.number="bsUrikakekin4">
+                                    <input type="number" aria-label="bs-urikakekin5" class="no-spin form-control" placeholder="売掛金1期" v-model.number="bsUrikakekin5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-yukashoken">有価証券　　</span>
+                                    <input type="number" aria-label="bs-yukashoken1" class="no-spin form-control" placeholder="有価証券5期" v-model.number="bsYukashoken1">
+                                    <input type="number" aria-label="bs-yukashoken2" class="no-spin form-control" placeholder="有価証券4期" v-model.number="bsYukashoken2">
+                                    <input type="number" aria-label="bs-yukashoken3" class="no-spin form-control" placeholder="有価証券3期" v-model.number="bsYukashoken3">
+                                    <input type="number" aria-label="bs-yukashoken4" class="no-spin form-control" placeholder="有価証券2期" v-model.number="bsYukashoken4">
+                                    <input type="number" aria-label="bs-yukashoken5" class="no-spin form-control" placeholder="有価証券1期" v-model.number="bsYukashoken5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-shohin">商品　　　　</span>
+                                    <input type="number" aria-label="bs-shohin1" class="no-spin form-control" placeholder="商品5期" v-model.number="bsShohin1">
+                                    <input type="number" aria-label="bs-shohin2" class="no-spin form-control" placeholder="商品4期" v-model.number="bsShohin2">
+                                    <input type="number" aria-label="bs-shohin3" class="no-spin form-control" placeholder="商品3期" v-model.number="bsShohin3">
+                                    <input type="number" aria-label="bs-shohin4" class="no-spin form-control" placeholder="商品2期" v-model.number="bsShohin4">
+                                    <input type="number" aria-label="bs-shohin5" class="no-spin form-control" placeholder="商品1期" v-model.number="bsShohin5">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-ryudou-sisan-goukei">流動資産合計</span>
+                                    <input type="number" aria-label="bs-ryudou-sisan-goukei1" class="no-spin form-control" placeholder="流動資産合計5期" v-model.number="bsRyudouSisanGoukei1">
+                                    <input type="number" aria-label="bs-ryudou-sisan-goukei2" class="no-spin form-control" placeholder="流動資産合計4期" v-model.number="bsRyudouSisanGoukei2">
+                                    <input type="number" aria-label="bs-ryudou-sisan-goukei3" class="no-spin form-control" placeholder="流動資産合計3期" v-model.number="bsRyudouSisanGoukei3">
+                                    <input type="number" aria-label="bs-ryudou-sisan-goukei4" class="no-spin form-control" placeholder="流動資産合計2期" v-model.number="bsRyudouSisanGoukei4">
+                                    <input type="number" aria-label="bs-ryudou-sisan-goukei5" class="no-spin form-control" placeholder="流動資産合計1期" v-model.number="bsRyudouSisanGoukei5">
+                                </div>
+                                <p class="text-white bg-success bg-gradient">固定資産の部</p>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="bs-kotei-sisan-goukei">固定資産合計</span>
+                                    <input type="number" aria-label="bs-kotei-sisan-goukei1" class="no-spin form-control" placeholder="固定資産合計5期" v-model.number="bsKoteiSisanGoukei1">
+                                    <input type="number" aria-label="bs-kotei-sisan-goukei2" class="no-spin form-control" placeholder="固定資産合計4期" v-model.number="bsKoteiSisanGoukei2">
+                                    <input type="number" aria-label="bs-kotei-sisan-goukei3" class="no-spin form-control" placeholder="固定資産合計3期" v-model.number="bsKoteiSisanGoukei3">
+                                    <input type="number" aria-label="bs-kotei-sisan-goukei4" class="no-spin form-control" placeholder="固定資産合計2期" v-model.number="bsKoteiSisanGoukei4">
+                                    <input type="number" aria-label="bs-kotei-sisan-goukei5" class="no-spin form-control" placeholder="固定資産合計1期" v-model.number="bsKoteiSisanGoukei5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-white bg-info">負債の部</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div v-bind:class="analysisPaneClass" id="analysis-view-tab-pane" role="tabpanel" aria-labelledby="analysis-tab" tabindex="0">
@@ -99,10 +174,10 @@
                 </div>
             </div>
         </div>
-    
+
         <script>
             const { createApp } = Vue
-        
+
             createApp({
                 data() {
                     return {
@@ -136,6 +211,86 @@
                         plToukijyunrieki3:0,
                         plToukijyunrieki4:0,
                         plToukijyunrieki5:0,
+                        /* 貸借対照表 流動資産 現金1期 */
+                        bsGenkin1: 0,
+                        /* 貸借対照表 流動資産 現金2期 */
+                        bsGenkin2: 0,
+                        /* 貸借対照表 流動資産 現金3期 */
+                        bsGenkin3: 0,
+                        /* 貸借対照表 流動資産 現金4期 */
+                        bsGenkin4: 0,
+                        /* 貸借対照表 流動資産 現金5期 */
+                        bsGenkin5: 0,
+                        /* 貸借対照表 流動資産 預金1期 */
+                        bsYokin1: 0,
+                        /* 貸借対照表 流動資産 預金2期 */
+                        bsYokin2: 0,
+                        /* 貸借対照表 流動資産 預金3期 */
+                        bsYokin3: 0,
+                        /* 貸借対照表 流動資産 預金4期 */
+                        bsYokin4: 0,
+                        /* 貸借対照表 流動資産 預金5期 */
+                        bsYokin5: 0,
+                        /* 貸借対照表 流動資産 受取手形1期 */
+                        bsUketoriTegata1: 0,
+                        /* 貸借対照表 流動資産 受取手形2期 */
+                        bsUketoriTegata2: 0,
+                        /* 貸借対照表 流動資産 受取手形3期 */
+                        bsUketoriTegata3: 0,
+                        /* 貸借対照表 流動資産 受取手形4期 */
+                        bsUketoriTegata4: 0,
+                        /* 貸借対照表 流動資産 受取手形5期 */
+                        bsUketoriTegata5: 0,
+                        /* 貸借対照表 流動資産 売掛金1期 */
+                        bsUrikakekin1: 0,
+                        /* 貸借対照表 流動資産 売掛金2期 */
+                        bsUrikakekin2: 0,
+                        /* 貸借対照表 流動資産 売掛金3期 */
+                        bsUrikakekin3: 0,
+                        /* 貸借対照表 流動資産 売掛金4期 */
+                        bsUrikakekin4: 0,
+                        /* 貸借対照表 流動資産 売掛金5期 */
+                        bsUrikakekin5: 0,
+                        /* 貸借対照表 流動資産 有価証券1期 */
+                        bsYukashoken1: 0,
+                        /* 貸借対照表 流動資産 有価証券2期 */
+                        bsYukashoken2: 0,
+                        /* 貸借対照表 流動資産 有価証券3期 */
+                        bsYukashoken3: 0,
+                        /* 貸借対照表 流動資産 有価証券4期 */
+                        bsYukashoken4: 0,
+                        /* 貸借対照表 流動資産 有価証券5期 */
+                        bsYukashoken5: 0,
+                        /* 貸借対照表 流動資産 商品1期 */
+                        bsShohin1: 0,
+                        /* 貸借対照表 流動資産 商品2期 */
+                        bsShohin2: 0,
+                        /* 貸借対照表 流動資産 商品3期 */
+                        bsShohin3: 0,
+                        /* 貸借対照表 流動資産 商品4期 */
+                        bsShohin4: 0,
+                        /* 貸借対照表 流動資産 商品5期 */
+                        bsShohin5: 0,
+                        /* 貸借対照表 流動資産 流動資産合計1期 */
+                        bsRyudouSisanGoukei1: 0,
+                        /* 貸借対照表 流動資産 流動資産合計2期 */
+                        bsRyudouSisanGoukei2: 0,
+                        /* 貸借対照表 流動資産 流動資産合計3期 */
+                        bsRyudouSisanGoukei3: 0,
+                        /* 貸借対照表 流動資産 流動資産合計4期 */
+                        bsRyudouSisanGoukei4: 0,
+                        /* 貸借対照表 流動資産 流動資産合計5期 */
+                        bsRyudouSisanGoukei5: 0,
+                        /* 貸借対照表 流動資産 固定資産合計1期 */
+                        bsKoteiSisanGoukei1: 0,
+                        /* 貸借対照表 流動資産 固定資産合計2期 */
+                        bsKoteiSisanGoukei2: 0,
+                        /* 貸借対照表 流動資産 固定資産合計3期 */
+                        bsKoteiSisanGoukei3: 0,
+                        /* 貸借対照表 流動資産 固定資産合計4期 */
+                        bsKoteiSisanGoukei4: 0,
+                        /* 貸借対照表 流動資産 固定資産合計5期 */
+                        bsKoteiSisanGoukei5: 0,
                         plLinkBtnClass: {'nav-link': true, 'active': true},
                         bsLinkBtnClass: {'nav-link': true, 'active': false},
                         analysisLinkBtnClass: {'nav-link': true, 'active': false},
