@@ -32,56 +32,140 @@
                 <div v-bind:class="plPaneClass" id="pl-view-tab-pane" role="tabpanel" aria-labelledby="pl-tab" tabindex="0">
                     <div class="container">
                         <p class="text-white bg-primary">損益計算書</p>
+                        <div class="d-none d-md-block">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-12 col-md-2 text-center">今年</div>
+                                <div class="col-12 col-md-2 text-center">1年前</div>
+                                <div class="col-12 col-md-2 text-center">2年前</div>
+                                <div class="col-12 col-md-2 text-center">3年前</div>
+                                <div class="col-12 col-md-2 text-center">4年前</div>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">売上高</span>
-                                    <input type="number" aria-label="pl-uriagedaka1" class="no-spin form-control" placeholder="売上総利益5期" v-model.number="plUriagedaka1">
-                                    <input type="number" aria-label="pl-uriagedaka2" class="no-spin form-control" placeholder="売上総利益4期" v-model.number="plUriagedaka2">
-                                    <input type="number" aria-label="pl-uriagedaka3" class="no-spin form-control" placeholder="売上総利益3期" v-model.number="plUriagedaka3">
-                                    <input type="number" aria-label="pl-uriagedaka4" class="no-spin form-control" placeholder="売上総利益2期" v-model.number="plUriagedaka4">
-                                    <input type="number" aria-label="pl-uriagedaka5" class="no-spin form-control" placeholder="売上総利益1期" v-model.number="plUriagedaka5">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">売上総利益</span>
-                                    <input type="number" aria-label="pl-uriagesourieki1" class="no-spin form-control" placeholder="売上総利益5期" v-model.number="plUuriagesourieki1">
-                                    <input type="number" aria-label="pl-uriagesourieki2" class="no-spin form-control" placeholder="売上総利益4期" v-model.number="plUuriagesourieki2">
-                                    <input type="number" aria-label="pl-uriagesourieki3" class="no-spin form-control" placeholder="売上総利益3期" v-model.number="plUuriagesourieki3">
-                                    <input type="number" aria-label="pl-uriagesourieki4" class="no-spin form-control" placeholder="売上総利益2期" v-model.number="plUuriagesourieki4">
-                                    <input type="number" aria-label="pl-uriagesourieki5" class="no-spin form-control" placeholder="売上総利益1期" v-model.number="plUuriagesourieki5">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">営業利益</span>
-                                    <input type="number" aria-label="pl-eigyourieki1" class="no-spin form-control" placeholder="営業利益5期" v-model.number="plEigyourieki1">
-                                    <input type="number" aria-label="pl-eigyourieki2" class="no-spin form-control" placeholder="営業利益4期" v-model.number="plEigyourieki2">
-                                    <input type="number" aria-label="pl-eigyourieki3" class="no-spin form-control" placeholder="営業利益3期" v-model.number="plEigyourieki3">
-                                    <input type="number" aria-label="pl-eigyourieki4" class="no-spin form-control" placeholder="営業利益2期" v-model.number="plEigyourieki4">
-                                    <input type="number" aria-label="pl-eigyourieki5" class="no-spin form-control" placeholder="営業利益1期" v-model.number="plEigyourieki5">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">経常利益</span>
-                                    <input type="number" aria-label="pl-keijyorieki1" class="no-spin form-control" placeholder="経常利益5期" v-model.number="plKeijyorieki1">
-                                    <input type="number" aria-label="pl-keijyorieki2" class="no-spin form-control" placeholder="経常利益4期" v-model.number="plKeijyorieki2">
-                                    <input type="number" aria-label="pl-keijyorieki3" class="no-spin form-control" placeholder="経常利益3期" v-model.number="plKeijyorieki3">
-                                    <input type="number" aria-label="pl-keijyorieki4" class="no-spin form-control" placeholder="経常利益2期" v-model.number="plKeijyorieki4">
-                                    <input type="number" aria-label="pl-keijyorieki5" class="no-spin form-control" placeholder="経常利益1期" v-model.number="plKeijyorieki5">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">税引前当期純利益</span>
-                                    <input type="number" aria-label="pl-zeibikimatoukijyunrieki1" class="no-spin form-control" placeholder="税引前当期純利益5期" v-model.number="plZeibikimatoukijyunrieki1">
-                                    <input type="number" aria-label="pl-zeibikimatoukijyunrieki2" class="no-spin form-control" placeholder="税引前当期純利益4期" v-model.number="plZeibikimatoukijyunrieki2">
-                                    <input type="number" aria-label="pl-zeibikimatoukijyunrieki3" class="no-spin form-control" placeholder="税引前当期純利益3期" v-model.number="plZeibikimatoukijyunrieki3">
-                                    <input type="number" aria-label="pl-zeibikimatoukijyunrieki4" class="no-spin form-control" placeholder="税引前当期純利益2期" v-model.number="plZeibikimatoukijyunrieki4">
-                                    <input type="number" aria-label="pl-zeibikimatoukijyunrieki5" class="no-spin form-control" placeholder="税引前当期純利益1期" v-model.number="plZeibikimatoukijyunrieki5">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text col-2">当期純利益</span>
-                                    <input type="number" aria-label="pl-toukijyunrieki1" class="no-spin form-control" placeholder="税引前当期純利益5期" v-model.number="plToukijyunrieki1">
-                                    <input type="number" aria-label="pl-toukijyunrieki2" class="no-spin form-control" placeholder="税引前当期純利益4期" v-model.number="plToukijyunrieki2">
-                                    <input type="number" aria-label="pl-toukijyunrieki3" class="no-spin form-control" placeholder="税引前当期純利益3期" v-model.number="plToukijyunrieki3">
-                                    <input type="number" aria-label="pl-toukijyunrieki4" class="no-spin form-control" placeholder="税引前当期純利益2期" v-model.number="plToukijyunrieki4">
-                                    <input type="number" aria-label="pl-toukijyunrieki5" class="no-spin form-control" placeholder="税引前当期純利益1期" v-model.number="plToukijyunrieki5">
-                                </div>
+                            <div class="col-12">
+                                <span class="input-group-text">売上高</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagedaka1" class="no-spin form-control" placeholder="売上総利益5期" v-model.number="plUriagedaka1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagedaka2" class="no-spin form-control" placeholder="売上総利益4期" v-model.number="plUriagedaka2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagedaka3" class="no-spin form-control" placeholder="売上総利益3期" v-model.number="plUriagedaka3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagedaka4" class="no-spin form-control" placeholder="売上総利益2期" v-model.number="plUriagedaka4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagedaka5" class="no-spin form-control" placeholder="売上総利益1期" v-model.number="plUriagedaka5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">売上総利益</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagesourieki1" class="no-spin form-control" placeholder="売上総利益5期" v-model.number="plUuriagesourieki1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagesourieki2" class="no-spin form-control" placeholder="売上総利益4期" v-model.number="plUuriagesourieki2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagesourieki3" class="no-spin form-control" placeholder="売上総利益3期" v-model.number="plUuriagesourieki3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagesourieki4" class="no-spin form-control" placeholder="売上総利益2期" v-model.number="plUuriagesourieki4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-uriagesourieki5" class="no-spin form-control" placeholder="売上総利益1期" v-model.number="plUuriagesourieki5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">営業利益</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-eigyourieki1" class="no-spin form-control" placeholder="営業利益5期" v-model.number="plEigyourieki1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-eigyourieki2" class="no-spin form-control" placeholder="営業利益4期" v-model.number="plEigyourieki2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-eigyourieki3" class="no-spin form-control" placeholder="営業利益3期" v-model.number="plEigyourieki3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-eigyourieki4" class="no-spin form-control" placeholder="営業利益2期" v-model.number="plEigyourieki4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-eigyourieki5" class="no-spin form-control" placeholder="営業利益1期" v-model.number="plEigyourieki5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">経常利益</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-keijyorieki1" class="no-spin form-control" placeholder="経常利益5期" v-model.number="plKeijyorieki1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-keijyorieki2" class="no-spin form-control" placeholder="経常利益4期" v-model.number="plKeijyorieki2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-keijyorieki3" class="no-spin form-control" placeholder="経常利益3期" v-model.number="plKeijyorieki3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-keijyorieki4" class="no-spin form-control" placeholder="経常利益2期" v-model.number="plKeijyorieki4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-keijyorieki5" class="no-spin form-control" placeholder="経常利益1期" v-model.number="plKeijyorieki5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">税引前当期純利益</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-zeibikimatoukijyunrieki1" class="no-spin form-control" placeholder="税引前当期純利益5期" v-model.number="plZeibikimatoukijyunrieki1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-zeibikimatoukijyunrieki2" class="no-spin form-control" placeholder="税引前当期純利益4期" v-model.number="plZeibikimatoukijyunrieki2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-zeibikimatoukijyunrieki3" class="no-spin form-control" placeholder="税引前当期純利益3期" v-model.number="plZeibikimatoukijyunrieki3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-zeibikimatoukijyunrieki4" class="no-spin form-control" placeholder="税引前当期純利益2期" v-model.number="plZeibikimatoukijyunrieki4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-zeibikimatoukijyunrieki5" class="no-spin form-control" placeholder="税引前当期純利益1期" v-model.number="plZeibikimatoukijyunrieki5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">当期純利益</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-toukijyunrieki1" class="no-spin form-control" placeholder="税引前当期純利益5期" v-model.number="plToukijyunrieki1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-toukijyunrieki2" class="no-spin form-control" placeholder="税引前当期純利益4期" v-model.number="plToukijyunrieki2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-toukijyunrieki3" class="no-spin form-control" placeholder="税引前当期純利益3期" v-model.number="plToukijyunrieki3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-toukijyunrieki4" class="no-spin form-control" placeholder="税引前当期純利益2期" v-model.number="plToukijyunrieki4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="pl-toukijyunrieki5" class="no-spin form-control" placeholder="税引前当期純利益1期" v-model.number="plToukijyunrieki5">
                             </div>
                         </div>
                     </div>
