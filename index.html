@@ -577,6 +577,80 @@
                             </div>
                         </div>
                         <p class="text-white bg-info">純資産の部</p>
+                        <p class="text-white bg-success bg-gradient">株主資本</p>
+                        <div class="d-none d-md-block">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-12 col-md-2 text-center">今年</div>
+                                <div class="col-12 col-md-2 text-center">1年前</div>
+                                <div class="col-12 col-md-2 text-center">2年前</div>
+                                <div class="col-12 col-md-2 text-center">3年前</div>
+                                <div class="col-12 col-md-2 text-center">4年前</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">利益剰余金合計</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-rieki-jouyokin-goukei1" class="no-spin form-control" v-model.number="bsRirekiJouyokinGoukei1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-rieki-jouyokin-goukei2" class="no-spin form-control" v-model.number="bsRirekiJouyokinGoukei2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-rieki-jouyokin-goukei3" class="no-spin form-control" v-model.number="bsRirekiJouyokinGoukei3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-rieki-jouyokin-goukei4" class="no-spin form-control" v-model.number="bsRirekiJouyokinGoukei4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-rieki-jouyokin-goukei5" class="no-spin form-control" v-model.number="bsRirekiJouyokinGoukei5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">純資産合計</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-junsisan-goukei1" class="no-spin form-control" v-model.number="bsJunsisanGoukei1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-junsisan-goukei2" class="no-spin form-control" v-model.number="bsJunsisanGoukei2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-junsisan-goukei3" class="no-spin form-control" v-model.number="bsJunsisanGoukei3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-junsisan-goukei4" class="no-spin form-control" v-model.number="bsJunsisanGoukei4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-junsisan-goukei5" class="no-spin form-control" v-model.number="bsJunsisanGoukei5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">総資本</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-sousihon1" class="no-spin form-control" v-model.number="bsSousihon1">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-sousihon2" class="no-spin form-control" v-model.number="bsSousihon2">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-sousihon3" class="no-spin form-control" v-model.number="bsSousihon3">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-sousihon4" class="no-spin form-control" v-model.number="bsSousihon4">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" aria-label="bs-sousihon5" class="no-spin form-control" v-model.number="bsSousihon5">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div v-bind:class="analysisPaneClass" id="analysis-view-tab-pane" role="tabpanel" aria-labelledby="analysis-tab" tabindex="0">
@@ -793,6 +867,36 @@
                         bsFusaiGoukei4: 0,
                         /* 貸借対照表 固定負債 負債合計5期 */
                         bsFusaiGoukei5: 0,
+                        /* 貸借対照表 資産の部 利益剰余金合計5期 */
+                        bsRirekiJouyokinGoukei1: 0,
+                        /* 貸借対照表 資産の部 利益剰余金合計4期 */
+                        bsRirekiJouyokinGoukei2: 0,
+                        /* 貸借対照表 資産の部 利益剰余金合計3期 */
+                        bsRirekiJouyokinGoukei3: 0,
+                        /* 貸借対照表 資産の部 利益剰余金合計2期 */
+                        bsRirekiJouyokinGoukei4: 0,
+                        /* 貸借対照表 資産の部 利益剰余金合計1期 */
+                        bsRirekiJouyokinGoukei5: 0,
+                        /* 貸借対照表 資産の部 純資産合計5期 */
+                        bsJunsisanGoukei1: 0,
+                        /* 貸借対照表 資産の部 純資産合計4期 */
+                        bsJunsisanGoukei2: 0,
+                        /* 貸借対照表 資産の部 純資産合計3期 */
+                        bsJunsisanGoukei3: 0,
+                        /* 貸借対照表 資産の部 純資産合計2期 */
+                        bsJunsisanGoukei4: 0,
+                        /* 貸借対照表 資産の部 純資産合計1期 */
+                        bsJunsisanGoukei5: 0,
+                        /* 貸借対照表 総資本5期 */
+                        bsSousihon1: 0,
+                        /* 貸借対照表 総資本4期 */
+                        bsSousihon2: 0,
+                        /* 貸借対照表 総資本3期 */
+                        bsSousihon3: 0,
+                        /* 貸借対照表 総資本2期 */
+                        bsSousihon4: 0,
+                        /* 貸借対照表 総資本1期 */
+                        bsSousihon5: 0,
                         plLinkBtnClass: {'nav-link': true, 'active': true},
                         bsLinkBtnClass: {'nav-link': true, 'active': false},
                         analysisLinkBtnClass: {'nav-link': true, 'active': false},
