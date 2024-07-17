@@ -656,6 +656,37 @@
                 <div v-bind:class="analysisPaneClass" id="analysis-view-tab-pane" role="tabpanel" aria-labelledby="analysis-tab" tabindex="0">
                     <div class="container">
                         <p class="text-white bg-primary">分析</p>
+                        <div class="d-none d-md-block">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-12 col-md-2 text-center">今年</div>
+                                <div class="col-12 col-md-2 text-center">1年前</div>
+                                <div class="col-12 col-md-2 text-center">2年前</div>
+                                <div class="col-12 col-md-2 text-center">3年前</div>
+                                <div class="col-12 col-md-2 text-center">4年前</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">自己資本比率</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="jikosihonRatio1" aria-label="readonly jikosihon-ratio1" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="jikosihonRatio2" aria-label="readonly jikosihon-ratio2" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="jikosihonRatio3" aria-label="readonly jikosihon-ratio3" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="jikosihonRatio4" aria-label="readonly jikosihon-ratio4" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="jikosihonRatio5" aria-label="readonly jikosihon-ratio5" readonly>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -953,6 +984,25 @@
                         this.bsPaneClass = {'tab-pane': true, 'fade': true, 'show': argSelectView == 'bsView', 'active': argSelectView == 'bsView'};
                         this.analysisPaneClass = {'tab-pane': true, 'fade': true, 'show': argSelectView == 'analysisView', 'active': argSelectView == 'analysisView'};
                     },
+                    /**
+                     * 比率計算処理
+                     * @param {number} molecule - 分子の値を指定
+                     * @param {number} denominator - 分母の値を指定
+                     * @return {number} - 計算結果を小数第2位まで表示して返却
+                     */
+                    calcRatio(molecule, denominator) {
+                        if (molecule == "" || molecule == undefined || denominator == "" || denominator == undefined) {
+                            return "";
+                        }
+                        return (Math.round((molecule / denominator) * 10000) / 100).toFixed(2);
+                    },
+                },
+                computed: {
+                     jikosihonRatio1: function() { return this.calcRatio(this.bsJunsisanGoukei1, this.bsSousihon1) + "%"},
+                     jikosihonRatio2: function() { return this.calcRatio(this.bsJunsisanGoukei2, this.bsSousihon2) + "%"},
+                     jikosihonRatio3: function() { return this.calcRatio(this.bsJunsisanGoukei3, this.bsSousihon3) + "%"},
+                     jikosihonRatio4: function() { return this.calcRatio(this.bsJunsisanGoukei4, this.bsSousihon4) + "%"},
+                     jikosihonRatio5: function() { return this.calcRatio(this.bsJunsisanGoukei5, this.bsSousihon5) + "%"},
                 },
             }).mount('#app')
         </script>
