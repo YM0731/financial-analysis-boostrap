@@ -656,6 +656,40 @@
                 <div v-bind:class="analysisPaneClass" id="analysis-view-tab-pane" role="tabpanel" aria-labelledby="analysis-tab" tabindex="0">
                     <div class="container">
                         <p class="text-white bg-primary">分析</p>
+                        <p class="text-white bg-info">安全性</p>
+                        <p class="text-white bg-success bg-gradient">流動性分析</p>
+                        <div class="d-none d-md-block">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-12 col-md-2 text-center">今年</div>
+                                <div class="col-12 col-md-2 text-center">1年前</div>
+                                <div class="col-12 col-md-2 text-center">2年前</div>
+                                <div class="col-12 col-md-2 text-center">3年前</div>
+                                <div class="col-12 col-md-2 text-center">4年前</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">手元流動性比率(月)</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="temotoRyudouseiRatio1" aria-label="readonly temoto-ryudousei-ratio1" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="temotoRyudouseiRatio2" aria-label="readonly temoto-ryudousei-ratio2" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="temotoRyudouseiRatio3" aria-label="readonly temoto-ryudousei-ratio3" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="temotoRyudouseiRatio4" aria-label="readonly temoto-ryudousei-ratio4" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="temotoRyudouseiRatio5" aria-label="readonly temoto-ryudousei-ratio5" readonly>
+                            </div>
+                        </div>
+                        <p class="text-white bg-success bg-gradient">健全性分析</p>
                         <div class="d-none d-md-block">
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -706,6 +740,38 @@
                             </div>
                             <div class="col-12 col-md-2">
                                 <input class="form-control" type="text" v-bind:value="junsisanFusaiRatio5" aria-label="readonly junsisan-fusai-ratio5" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">固定長期適合率</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiChoukiTekigouRatio1" aria-label="readonly kotei-chouki-tekigou-ratio1" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiChoukiTekigouRatio2" aria-label="readonly kotei-chouki-tekigou-ratio2" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiChoukiTekigouRatio3" aria-label="readonly kotei-chouki-tekigou-ratio3" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiChoukiTekigouRatio4" aria-label="readonly kotei-chouki-tekigou-ratio4" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiChoukiTekigouRatio5" aria-label="readonly kotei-chouki-tekigou-ratio5" readonly>
+                            </div>
+                        </div>
+                        <p class="text-white bg-info">収益性</p>
+                        <div class="d-none d-md-block">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-12 col-md-2 text-center">今年</div>
+                                <div class="col-12 col-md-2 text-center">1年前</div>
+                                <div class="col-12 col-md-2 text-center">2年前</div>
+                                <div class="col-12 col-md-2 text-center">3年前</div>
+                                <div class="col-12 col-md-2 text-center">4年前</div>
                             </div>
                         </div>
                     </div>
@@ -1017,20 +1083,47 @@
                         }
                         return (Math.round((molecule / denominator) * 10000) / 100).toFixed(2);
                     },
+                    /**
+                     * 月数計算処理
+                     * @param {number} molecule - 分子の値を指定
+                     * @param {number} denominator - 分母の値を指定
+                     * @return {number} - 計算結果を小数第2位まで表示して返却
+                     */
+                    calcMonth(molecule, denominator) {
+                        if (molecule == "" || molecule == undefined || denominator == "" || denominator == undefined) {
+                            return "";
+                        }
+                        return (Math.round((molecule / denominator * 100)) / 100).toFixed(2);
+                    },
                 },
                 computed: {
-                    /* 自己資本比率 */
-                     jikosihonRatio1: function() { return this.calcRatio(this.bsJunsisanGoukei1, this.bsSousihon1) + "%"},
-                     jikosihonRatio2: function() { return this.calcRatio(this.bsJunsisanGoukei2, this.bsSousihon2) + "%"},
-                     jikosihonRatio3: function() { return this.calcRatio(this.bsJunsisanGoukei3, this.bsSousihon3) + "%"},
-                     jikosihonRatio4: function() { return this.calcRatio(this.bsJunsisanGoukei4, this.bsSousihon4) + "%"},
-                     jikosihonRatio5: function() { return this.calcRatio(this.bsJunsisanGoukei5, this.bsSousihon5) + "%"},
-                     /* 純資産負債比率 */
-                     junsisanFusaiRatio1: function() { return this.calcRatio(this.bsFusaiGoukei1, this.bsJunsisanGoukei1) + "%"},
-                     junsisanFusaiRatio2: function() { return this.calcRatio(this.bsFusaiGoukei2, this.bsJunsisanGoukei2) + "%"},
-                     junsisanFusaiRatio3: function() { return this.calcRatio(this.bsFusaiGoukei3, this.bsJunsisanGoukei3) + "%"},
-                     junsisanFusaiRatio4: function() { return this.calcRatio(this.bsFusaiGoukei4, this.bsJunsisanGoukei4) + "%"},
-                     junsisanFusaiRatio5: function() { return this.calcRatio(this.bsFusaiGoukei5, this.bsJunsisanGoukei5) + "%"},
+                    /* 安全性 */
+                    /* 安全性 流動性分析 */
+                    /* 安全性 流動性分析 手元流動性比率 */
+                    temotoRyudouseiRatio1: function() { return this.calcMonth(this.bsGenkin1 + this.bsYukashoken1, this.plUriagedaka1 / 12) + "ヵ月"},
+                    temotoRyudouseiRatio2: function() { return this.calcMonth(this.bsGenkin2 + this.bsYukashoken2, this.plUriagedaka2 / 12) + "ヵ月"},
+                    temotoRyudouseiRatio3: function() { return this.calcMonth(this.bsGenkin3 + this.bsYukashoken3, this.plUriagedaka3 / 12) + "ヵ月"},
+                    temotoRyudouseiRatio4: function() { return this.calcMonth(this.bsGenkin4 + this.bsYukashoken4, this.plUriagedaka4 / 12) + "ヵ月"},
+                    temotoRyudouseiRatio5: function() { return this.calcMonth(this.bsGenkin5 + this.bsYukashoken5, this.plUriagedaka5 / 12) + "ヵ月"},
+                    /* 安全性 健全性分析 */
+                    /* 安全性 健全性分析 自己資本比率 */
+                    jikosihonRatio1: function() { return this.calcRatio(this.bsJunsisanGoukei1, this.bsSousihon1) + "%"},
+                    jikosihonRatio2: function() { return this.calcRatio(this.bsJunsisanGoukei2, this.bsSousihon2) + "%"},
+                    jikosihonRatio3: function() { return this.calcRatio(this.bsJunsisanGoukei3, this.bsSousihon3) + "%"},
+                    jikosihonRatio4: function() { return this.calcRatio(this.bsJunsisanGoukei4, this.bsSousihon4) + "%"},
+                    jikosihonRatio5: function() { return this.calcRatio(this.bsJunsisanGoukei5, this.bsSousihon5) + "%"},
+                    /* 安全性 健全性分析 純資産負債比率 */
+                    junsisanFusaiRatio1: function() { return this.calcRatio(this.bsFusaiGoukei1, this.bsJunsisanGoukei1) + "%"},
+                    junsisanFusaiRatio2: function() { return this.calcRatio(this.bsFusaiGoukei2, this.bsJunsisanGoukei2) + "%"},
+                    junsisanFusaiRatio3: function() { return this.calcRatio(this.bsFusaiGoukei3, this.bsJunsisanGoukei3) + "%"},
+                    junsisanFusaiRatio4: function() { return this.calcRatio(this.bsFusaiGoukei4, this.bsJunsisanGoukei4) + "%"},
+                    junsisanFusaiRatio5: function() { return this.calcRatio(this.bsFusaiGoukei5, this.bsJunsisanGoukei5) + "%"},
+                    /* 安全性 健全性分析 固定長期適合率 */
+                    koteiChoukiTekigouRatio1: function() { return this.calcRatio(this.bsKoteiSisanGoukei1, this.bsJunsisanGoukei1 + this.bsKoteiFusaiGoukei1) + "%"},
+                    koteiChoukiTekigouRatio2: function() { return this.calcRatio(this.bsKoteiSisanGoukei2, this.bsJunsisanGoukei2 + this.bsKoteiFusaiGoukei2) + "%"},
+                    koteiChoukiTekigouRatio3: function() { return this.calcRatio(this.bsKoteiSisanGoukei3, this.bsJunsisanGoukei3 + this.bsKoteiFusaiGoukei3) + "%"},
+                    koteiChoukiTekigouRatio4: function() { return this.calcRatio(this.bsKoteiSisanGoukei4, this.bsJunsisanGoukei4 + this.bsKoteiFusaiGoukei4) + "%"},
+                    koteiChoukiTekigouRatio5: function() { return this.calcRatio(this.bsKoteiSisanGoukei5, this.bsJunsisanGoukei5 + this.bsKoteiFusaiGoukei5) + "%"},
                 },
             }).mount('#app')
         </script>
