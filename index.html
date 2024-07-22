@@ -710,6 +710,27 @@
                                 <input class="form-control" type="text" v-bind:value="touzaRatio5" aria-label="readonly touza-ratio5" readonly>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">流動比率</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="ryudouRatio1" aria-label="readonly ryudou-ratio1" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="ryudouRatio2" aria-label="readonly ryudou-ratio2" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="ryudouRatio3" aria-label="readonly ryudou-ratio3" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="ryudouRatio4" aria-label="readonly ryudou-ratio4" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="ryudouRatio5" aria-label="readonly ryudou-ratio5" readonly>
+                            </div>
+                        </div>
                         <p class="text-white bg-success bg-gradient">健全性分析</p>
                         <div class="d-none d-md-block">
                             <div class="row">
@@ -1126,12 +1147,18 @@
                     temotoRyudouseiRatio3: function() { return this.calcMonth(this.bsGenkin3 + this.bsYukashoken3, this.plUriagedaka3 / 12) + "ヵ月"},
                     temotoRyudouseiRatio4: function() { return this.calcMonth(this.bsGenkin4 + this.bsYukashoken4, this.plUriagedaka4 / 12) + "ヵ月"},
                     temotoRyudouseiRatio5: function() { return this.calcMonth(this.bsGenkin5 + this.bsYukashoken5, this.plUriagedaka5 / 12) + "ヵ月"},
-                    /* 安全性 流動性分析 当座資産 */
+                    /* 安全性 流動性分析 当座比率 */
                     touzaRatio1: function() { return this.calcRatio(this.bsGenkin1 + this.bsYokin1 + this.bsUketoriTegata1 + this.bsUrikakekin1 + this.bsYukashoken1, this.bsRyudouFusaiGoukei1) + "%"},
                     touzaRatio2: function() { return this.calcRatio(this.bsGenkin2 + this.bsYokin2 + this.bsUketoriTegata2 + this.bsUrikakekin2 + this.bsYukashoken2, this.bsRyudouFusaiGoukei2) + "%"},
                     touzaRatio3: function() { return this.calcRatio(this.bsGenkin3 + this.bsYokin3 + this.bsUketoriTegata3 + this.bsUrikakekin3 + this.bsYukashoken3, this.bsRyudouFusaiGoukei3) + "%"},
                     touzaRatio4: function() { return this.calcRatio(this.bsGenkin4 + this.bsYokin4 + this.bsUketoriTegata4 + this.bsUrikakekin4 + this.bsYukashoken4, this.bsRyudouFusaiGoukei4) + "%"},
                     touzaRatio5: function() { return this.calcRatio(this.bsGenkin5 + this.bsYokin5 + this.bsUketoriTegata5 + this.bsUrikakekin5 + this.bsYukashoken5, this.bsRyudouFusaiGoukei5) + "%"},
+                    /* 安全性 流動性分析 流動比率 */
+                    ryudouRatio1: function() { return this.calcRatio(this.bsRyudouSisanGoukei1, this.bsRyudouFusaiGoukei1) + "%"},
+                    ryudouRatio2: function() { return this.calcRatio(this.bsRyudouSisanGoukei2, this.bsRyudouFusaiGoukei2) + "%"},
+                    ryudouRatio3: function() { return this.calcRatio(this.bsRyudouSisanGoukei3, this.bsRyudouFusaiGoukei3) + "%"},
+                    ryudouRatio4: function() { return this.calcRatio(this.bsRyudouSisanGoukei4, this.bsRyudouFusaiGoukei4) + "%"},
+                    ryudouRatio5: function() { return this.calcRatio(this.bsRyudouSisanGoukei5, this.bsRyudouFusaiGoukei5) + "%"},
                     /* 安全性 健全性分析 */
                     /* 安全性 健全性分析 自己資本比率 */
                     jikosihonRatio1: function() { return this.calcRatio(this.bsJunsisanGoukei1, this.bsSousihon1) + "%"},
