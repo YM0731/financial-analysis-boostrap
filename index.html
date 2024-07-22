@@ -731,6 +731,27 @@
                                 <input class="form-control" type="text" v-bind:value="ryudouRatio5" aria-label="readonly ryudou-ratio5" readonly>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="input-group-text">固定比率</span>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiRatio1" aria-label="readonly kotei-ratio1" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiRatio2" aria-label="readonly kotei-ratio2" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiRatio3" aria-label="readonly kotei-ratio3" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiRatio4" aria-label="readonly kotei-ratio4" readonly>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input class="form-control" type="text" v-bind:value="koteiRatio5" aria-label="readonly kotei-ratio5" readonly>
+                            </div>
+                        </div>
                         <p class="text-white bg-success bg-gradient">健全性分析</p>
                         <div class="d-none d-md-block">
                             <div class="row">
@@ -1159,6 +1180,12 @@
                     ryudouRatio3: function() { return this.calcRatio(this.bsRyudouSisanGoukei3, this.bsRyudouFusaiGoukei3) + "%"},
                     ryudouRatio4: function() { return this.calcRatio(this.bsRyudouSisanGoukei4, this.bsRyudouFusaiGoukei4) + "%"},
                     ryudouRatio5: function() { return this.calcRatio(this.bsRyudouSisanGoukei5, this.bsRyudouFusaiGoukei5) + "%"},
+                    /* 安全性 流動性分析 固定比率 */
+                    koteiRatio1: function() { return this.calcRatio(this.bsKoteiSisanGoukei1, this.bsJunsisanGoukei1) + "%"},
+                    koteiRatio2: function() { return this.calcRatio(this.bsKoteiSisanGoukei2, this.bsJunsisanGoukei2) + "%"},
+                    koteiRatio3: function() { return this.calcRatio(this.bsKoteiSisanGoukei3, this.bsJunsisanGoukei3) + "%"},
+                    koteiRatio4: function() { return this.calcRatio(this.bsKoteiSisanGoukei4, this.bsJunsisanGoukei4) + "%"},
+                    koteiRatio5: function() { return this.calcRatio(this.bsKoteiSisanGoukei5, this.bsJunsisanGoukei5) + "%"},
                     /* 安全性 健全性分析 */
                     /* 安全性 健全性分析 自己資本比率 */
                     jikosihonRatio1: function() { return this.calcRatio(this.bsJunsisanGoukei1, this.bsSousihon1) + "%"},
